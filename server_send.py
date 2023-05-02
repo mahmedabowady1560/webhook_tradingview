@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request,render_template
 from threading import Thread
 import json
 import send_msg
@@ -23,6 +23,8 @@ def get_webhook():
 @app.route('/')
 def main():
     return 'Your Bot is Alive and Working !'
+def welcome():
+    return render_template('index.html')
 def run():
     app.run(host='0.0.0.0',port='8080')
 
